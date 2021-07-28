@@ -19,7 +19,6 @@ class ConnectionsController < ApplicationController
 
   def index
     @connections = Connection.all
-
     # Fetch connections
     url = "https://www.saltedge.com/api/v5/connections?customer_id=#{current_user.customer_id}"
     response = RestClient::Request.execute(method: :get, url: url,
