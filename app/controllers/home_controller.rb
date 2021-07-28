@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 class HomeController < ApplicationController
   def index
-    if current_user.present? 
+    if current_user.present?
       render 'index'
     else
       render 'create'
     end
   end
 
-  def show
-  end
+  def show; end
 end
