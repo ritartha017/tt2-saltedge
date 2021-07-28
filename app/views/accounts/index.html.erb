@@ -1,0 +1,27 @@
+<h2>List of actual accounts:</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Account id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Nature</th>
+      <th scope="col">Balance</th>
+      <th scope="col">Currency code</th>
+      <th scope="col">Transactions</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @account.each.with_index(1) do |acc, index|%>
+    <tr>
+      <th scope="row"><%= index %></th>
+      <td><%= acc['data']['id'] %></td>
+      <td><%= acc['data']['name'] %></td>
+      <td><%= acc['data']['nature'] %></td>
+      <td><%= acc['data']['balance'] %></td>
+      <td><%= acc['data']['currency_code'] %></td>
+      <td><%= link_to 'Transactions', connection_account_transactions_path(params[:connection_id], index) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  connection_id: MyString
+  provider_name: MyText
+  country_code: MyText
+
+two:
+  connection_id: MyString
+  provider_name: MyText
+  country_code: MyText

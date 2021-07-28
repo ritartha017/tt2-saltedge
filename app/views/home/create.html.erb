@@ -1,0 +1,4 @@
+<% name = current_user.present? ? current_user.email : 'Stranger' %>
+<h1>Welcome, <%= name %></h1>
+
+<p>Please, <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign In', new_user_session_path %> to may use the app.</p>
