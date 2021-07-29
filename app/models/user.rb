@@ -18,11 +18,7 @@ class User < ApplicationRecord
                                                       App_id: ENV['APP_ID'], Secret: ENV['SECRET'] },
                                            payload: payload)
     customer = JSON.parse(response.body)
-    
     db = User.find(id)
     db.update(customer_id: customer['data']['id']) unless customer.empty?
-  
-    rescue RestClient::ExceptionWithResponse => e
-      # Catch 409 Dublicated error
-    end
+  end
 end

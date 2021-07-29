@@ -9,9 +9,9 @@ class AccountsController < ApplicationController
     response = RestClient::Request.execute(method: :get,
                                            url: url,
                                            headers: { accept: 'application/json',
-                                                      'content-type' => 'application/json', App_id: APP_ID, Secret: SECRET })
+                                                      'content-type' => 'application/json',
+                                                      App_id: APP_ID, Secret: SECRET })
     @accounts = JSON.parse(response.body)
-
     @accounts['data'].map { |account| @connection.accounts.create(data: account) }
     @account = Account.where(connection_id: @connection.id)
   end

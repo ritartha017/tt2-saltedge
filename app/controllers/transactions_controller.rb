@@ -10,7 +10,9 @@ class TransactionsController < ApplicationController
 
     url = "https://www.saltedge.com/api/v5/transactions?connection_id=#{@connection_id}&account_id=#{@account_id}"
     response = RestClient::Request.execute(method: :get, url: url,
-                                           headers: { accept: 'application/json', 'content-type' => 'application/json', App_id: APP_ID, Secret: SECRET })
+                                           headers: { accept: 'application/json',
+                                                      'content-type' => 'application/json',
+                                                      App_id: APP_ID, Secret: SECRET })
     @transactions = JSON.parse(response.body)
   end
 end
