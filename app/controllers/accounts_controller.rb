@@ -3,7 +3,6 @@
 class AccountsController < ApplicationController
   def index
     @connection = Connection.find(params[:connection_id])
-
     # fetch accounts
     url = "https://www.saltedge.com/api/v5/accounts?connection_id=#{@connection.data['id']}"
     response = RestClient::Request.execute(method: :get,
